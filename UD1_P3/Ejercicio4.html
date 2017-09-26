@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 1</title>
+    <script>
+      var q = prompt("Introduce año de nacimiento :");
+      var d = new Date();
+      var y = d.getFullYear();
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      if(y>=(q+18)){
+        document.write("Bienvenido");
+    }
+    else {
+        alert("Eres menor de edad");
+        document.write("Página no apta para menores");
+    }
+    </script>
+  </body>
+</html>
