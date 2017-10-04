@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 4</title>
+    <!-- <script type="text/javascript">
+      var cad1 = prompt("Introduce cad1:");
+      var cad2 = prompt("Introduce cad2:");
+    </script> -->
+    <script type="text/javascript">
+      var longCad = function cadenas(cad1, cad2) {
+
+      if ((typeof(cad1) == 'string')&&(typeof(cad2) == 'string')){
+        if (cad1.length>cad2.length) {
+          document.write("Palabra: ", cad1, "<br> Longitud: ", cad1.length);
+        }else {
+          document.write("Palabra: ", cad2, "<br> Longitud: ", cad2.length);
+        }
+      }
+      else{
+        alert("debes de introducir dos cadenas");
+      }
+      }
+      longCad("hola", "adios");
+      document.write("<br>");
+      longCad("paco", "francisco");
+      document.write("<br>");
+      longCad("uno", 2);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

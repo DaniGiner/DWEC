@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6</title>
+
+  </head>
+  <body>
+    <script type="text/javascript">
+
+        function concatena() {
+
+          var valor1 = "Daniel";
+          var valor2 = "Giner";
+
+          if (typeof(valor1)=="string" && typeof(valor2)=="string"){
+            var con = valor1+" "+valor2;
+            return con;
+          }
+
+        }
+
+        function saludador() {
+
+          document.write("Buenos Días "+concatena());
+
+        }
+
+        saludador();
+
+    </script>
+  </body>
+</html>
