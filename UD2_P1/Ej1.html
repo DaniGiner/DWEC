@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 1</title>
+    <script type="text/javascript">
+    function numMax(){
+      document.write("El numero mas grande en JS es: "+ Number.MAX_VALUE+"<br>");
+    }
+    function numMin(){
+      document.write("El numero mas pequeño en JS es: "+ Number.MIN_VALUE+"<br>");
+    }
+    function raizSiete(){
+      var n = Math.sqrt(7);
+      n = n.toPrecision(4);
+      document.write("Raiz de 7: "+n+"<br>");
+    }
+    function areaCirculo(){
+      var r = 3;
+      var area = Math.PI * (r*r);
+      var res = Math.round(area * 100) / 100 ;
+
+      document.write("Area de un circulo radio 3: "+res);
+    }
+
+    numMax();
+    numMin();
+    raizSiete();
+    areaCirculo()
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

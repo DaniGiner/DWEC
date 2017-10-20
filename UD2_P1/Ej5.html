@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+
+      function Persona(nombre, apellidos) {
+
+        if (nombre == null) {
+          this.nombre="Anónimo"
+          this.saludar = function (){
+            document.write("Hola soy "+this.nombre+"<br>");
+          }
+          this.mostrarPerson = function(){
+            document.write("Nombre: "+this.nombre+", Telefono: "+this.telefono+", Edad:"+this.edad+"<br>");
+          }
+        }else {
+          this.nombre = nombre;
+          this.apellidos = apellidos;
+          this.saludar = function (){
+            document.write("Hola me llamo "+this.nombre+" "+this.apellidos+"<br>");
+          }
+          this.mostrarPerson = function(){
+            document.write("Nombre: "+this.nombre+", Apellidos: "+this.apellidos+", Telefono: "+this.telefono+", Edad:"+this.edad+"<br>");
+          }
+        }
+
+        this.edad = Math.floor(Math.random()*100);
+
+        this.cumplirAnyo = function (){
+          this.edad = this.edad + 1;
+        }
+
+
+      }
+
+      var miPerson = new Persona("Shawn","Spencer");
+      //var miPerson = new Persona();
+      var otroPerson = new Persona("Burton", "Guster");
+
+      otroPerson.telefono = "653 234 8**";
+      miPerson.saludar();
+      otroPerson.saludar();
+      miPerson.cumplirAnyo();
+      miPerson.mostrarPerson();
+      otroPerson.mostrarPerson();
+
+      var a = miPerson instanceof Persona;
+      var b = otroPerson instanceof Persona;
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

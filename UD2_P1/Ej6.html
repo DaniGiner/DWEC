@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej6</title>
+    <script type="text/javascript">
+
+      function Persona(nombre, apellidos) {
+
+        if (nombre == null) {
+          this.nombre="Anónimo"
+          this.saludar = function (){
+            document.write("Hola soy "+this.nombre+"<br>");
+          }
+          this.mostrarPerson = function(){
+            document.write("Nombre: "+this.nombre+", Telefono: "+this.telefono+", Edad:"+this.edad+"<br>");
+          }
+        }else {
+          this.nombre = nombre;
+          this.apellidos = apellidos;
+          this.saludar = function (){
+            document.write("Hola me llamo "+this.nombre+" "+this.apellidos+"<br>");
+          }
+          this.mostrarPerson = function(){
+            document.write("Nombre: "+this.nombre+", Apellidos: "+this.apellidos+", Telefono: "+this.telefono+", Edad:"+this.edad+"<br>");
+          }
+        }
+
+        this.edad = Math.floor(Math.random()*100);
+
+        this.cumplirAnyo = function (){
+          this.edad = this.edad + 1;
+        }
+      }
+      function Estudiante(nombre, apellidos, edad, estudios, notamed){
+
+        this.nombre=nombre;
+        this.apellidos=apellidos;
+        this.edad=edad;
+        this.estudios = estudios;
+        this.notaMedia = notamed.toFixed(2);
+        this.recuperar = function (){
+          if (this.notaMedia<5){
+            this.notaMedia = 5;
+          }
+        }
+      }
+
+      var personUno = new Persona("Shawn","Spencer");
+      var personDos = new Persona("Burton", "Guster");
+      var personTres = new Persona("Dani", "Giner Villalba");
+
+      var estUno = new Estudiante(personUno.nombre, personUno.apellidos, personUno.edad, "ESO", 4.532);
+      var estDos = new Estudiante(personDos.nombre, personDos.apellidos, personDos.edad, "SMR", 7.865);
+      var estTres = new Estudiante(personTres.nombre, personTres.apellidos, personTres.edad, "DAW", 10);
+
+      var Lista = new Array(estUno, estDos, estTres);
+
+      for (var i = 0; i < Lista.length; i++) {
+        document.write("El estudiante de "+Lista[i].estudios+", "+Lista[i].nombre+" "+Lista[i].apellidos+" tiene una nota media de "+Lista[i].notaMedia+".<br>")
+      }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
