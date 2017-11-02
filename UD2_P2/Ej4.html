@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej4</title>
+    <script type="text/javascript">
+      var prueba = new Array(4);
+      prueba.push("Final1", "Final2");
+      prueba.unshift("Principio1","Principio2");
+
+      prueba.splice(2,4);
+      prueba.splice(3, 0, 10, 25);
+
+      var inverso = prueba;
+      inverso = inverso.reverse();
+
+      //Ej 4
+
+      console.log("Todos los elementos tipo number: " + prueba.every(function(num) {
+        return isNaN(num); }));
+      console.log("Algun elemento menor que 20: " + prueba.some(function(num) {
+        return num == 20; }));
+
+        var a = [4, 21, 33, 12, 9, 54];
+        function getSum(total, num) {
+          return total + num;
+          }
+        console.log("suma del array a: " + a.reduce(getSum));
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

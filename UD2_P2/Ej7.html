@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej7</title>
+    <script type="text/javascript">
+      var a = [4, 21, 33, 12, 9, 54];
+      a.forEach(function(num, indice, array) {
+        console.log(num*2);
+       });
+
+       var prueba = ["1", 2, true, "Hola", 5, false];
+
+       var pruebaNum = prueba.map(function(num) {
+         return Number(num); });
+
+       pruebaNum = pruebaNum.filter(function(num) {
+         return isNaN(num) == false;});
+
+      pruebaNum.forEach(function(num, indice, array) {
+        console.log("Índice: " + indice + ", es: " + num);
+      });
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

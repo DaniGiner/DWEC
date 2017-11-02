@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej2</title>
+    <script type="text/javascript">
+      var q = prompt("Introduce fecha vacaciones aaaa-mm-dd o aaaa/mm/dd: ");
+
+      if (q.search("-")>=0){
+        q = q.split("-");
+      }else if(q.search("/")>=0){
+        q = q.split("/");
+      }
+
+      var d = new Date();
+      d.setFullYear(q[0]);
+      d.setMonth(q[1]);
+      d.setDate(q[2]);
+      var fechaAct = new Date();
+      var miliSeg = d.getTime()-fechaAct.getTime();
+      document.write("Milisegundos: " + miliSeg+"<br>");
+      document.write("Días: " + parseInt(miliSeg / 86400000));
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
