@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8">
+     <title>Crea elementos del DOM</title>
+     <script type="text/javascript">
+       onload = function creaDOM(){
+       /*Aquí se escribe lo que sea necesario*/
+        var body = document.body;
+        var h1 = document.createElement("h1");
+        h1.innerHTML = "Titulo";
+        body.appendChild(h1);
+
+        var img = document.createElement("IMG");
+        img.setAttribute("src", "anoniman.png");
+        img.setAttribute("width", "50px");
+        img.setAttribute("height", "50px");
+        img.setAttribute("alt", "imagen");
+        body.appendChild(img);
+
+        document.getElementsByTagName("h1")[0].style.color = "blue";
+        document.getElementsByTagName("h1")[0].style.fontFamily = "Arial";
+
+       }
+     </script>
+  </head>
+  <body>
+
+  </body>
+</html>
