@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Ej3</title>
+    <!-- cambia parrafos cuando body cargado -->
+    <script type="text/javascript">
+      function cargado(){
+        for (var i = 0; i < document.getElementsByTagName("p").length; i++) {
+          document.getElementsByTagName("p")[i].innerHTML = "Este párrafo es el número "+(i+1);
+        }
+
+
+      }
+
+
+    </script>
+
+  </head>
+  <body onload="cargado()">
+
+    <div id="contiene_ps">
+     <p>?</p>
+     <p>?</p>
+     <p>?</p>
+     <p>?</p>
+     <p>?</p>
+     <p>?</p>
+    <div id="cambiame">
+    <input type="color" id="txtColor" value="#FF0000">
+    <button id="actualizar"
+    onclick="recorreTag();">Modificar los
+    párrafos!</button>
+    </div>
+    </div>
+    <!-- cambia color parrafos al elegido -->
+    <script type="text/javascript">
+      function recorreTag(){
+        document.getElementById("contiene_ps").style.color = document.getElementsByTagName("input")[0].value;
+      }
+    </script>
+
+ </body>
+</html>
