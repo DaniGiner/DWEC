@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Lista de la compra</h1>
+    <input type="text" name="texto"></input>
+    <select id="selector" name="selector">
+      <option value="0">Escoge una opcion</option>
+      <option value="red">Carniceria</option>
+      <option value="navy">Pescaderia</option>
+      <option value="cyan">Congelados</option>
+      <option value="gold">Panaderia</option>
+      <option value="magenta">Perfumeria</option>
+    </select>
+    <div>
+      <button onclick="añadirElemento()" name="añade">Añadir elemento</button>
+      <button onclick="borrarLista()" name="elimina">Borrar lista</button>
+    </div>
+    <hr>
+
+    <script type="text/javascript">
+    function borrarLista(){
+      document.body.removeChild(document.getElementsByClassName("lista")[0]); 
+    }
+    function borrarElemento(){
+      document.querySelector("p:hover").parentNode.removeChild(document.querySelector("p:hover"));
+    }
+
+    var div = document.createElement("DIV");
+    document.body.appendChild(div);
+    div.setAttribute("class", "lista");
+
+    function añadirElemento(){
+
+      var t = document.getElementsByTagName("input")[0].value;
+
+      if (t.value == "") {
+
+      }else{
+        if (selector.value!=0) {
+          var x = document.createElement("P");
+
+          x.innerHTML = t
+          document.body.appendChild(x);
+
+          x.style.color = selector.value;
+
+          x.setAttribute("onclick","borrarElemento()");
+
+          div.appendChild(x);
+
+        }
+      }
+
+    }
+    </script>
+  </body>
+</html>
