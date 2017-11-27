@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej1</title>
+
+  </head>
+  <body onload=>
+    <h1 id="miH1">ola, soy el H1</h1>
+    <h2 id="miH2">Hola, soy el H2O</h2>
+    <h3 id="miH3">Hola, soy el H3, h3h3h3</h3>
+    <div id="miDiv">Hola, soy el div, y sor  </div>
+    <p id="miP">Hola, soy un p, rsonaje</p>
+
+    <script type="text/javascript">
+      addEventListener("DOMContentLoaded", function(){
+        miP.addEventListener("click",function(){
+          document.body.style.backgroundColor="black";
+          miP.style.backgroundColor="white";
+        })
+        miDiv.addEventListener("dblclick", function(){
+          miDiv.style.color = "white";
+          miDiv.style.backgroundColor = "black";
+        })
+        miH3.addEventListener("mouseover", function(){
+          miH3.style.border = '1px solid black';
+        })
+        miH2.addEventListener("contextmenu", function(){
+          miH2.style.color = "blue";
+        })
+        miH1.addEventListener("wheel", function(){
+          miH1.innerHTML = "Hola, soy el H1, a secas"
+        })
+        oncontextmenu = function(e){
+          e.preventDefault();
+        }
+      })
+    </script>
+  </body>
+</html>

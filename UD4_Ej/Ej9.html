@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej9</title>
+  </head>
+  <body onresize="myFunction()">
+    <div id="miDiv">
+
+    </div>
+    <script>
+      addEventListener("DOMContentLoaded", function(){
+        miDiv.innerHTML = "Tamaño de la ventana: Ancho=" + window.outerWidth + ", Alto=" + window.outerHeight;
+        addEventListener("resize", myFunction);
+        function myFunction() {
+          var w = window.outerWidth;
+          var h = window.outerHeight;
+          var txt = "Tamaño de la ventana: Ancho=" + w + ", Alto=" + h;
+          miDiv.innerHTML = txt;
+        }
+      })
+    </script>
+  </body>
+</html>

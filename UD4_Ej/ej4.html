@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo</title>
+
+  </head>
+  <body>
+
+    <img src="foto1.png" alt="imagen" width="200">
+    <br>
+    <a href="#nonavegar">Deshabilitar cambio de imagen</a>
+
+    <script type="text/javascript">
+    addEventListener("DOMContentLoaded", function(){
+      var miImg = document.getElementsByTagName("img")[0];
+      miImg.addEventListener("mouseover", function(){
+        miImg.src = "foto2.png";
+      })
+      miImg.addEventListener("mouseout", function(){
+        miImg.src = "foto1.png";
+      })
+    })
+    </script>
+
+  </body>
+</html>

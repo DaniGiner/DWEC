@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej7</title>
+    <style media="screen">
+      div{
+        text-align: center;
+        vertical-align: middle;
+        font-size: 320px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="miDiv">
+
+    </div>
+    <script type="text/javascript">
+
+    addEventListener("DOMContentLoaded", function(){
+      onkeyup = teclaPulsada;
+      onkeypress = menConsola;
+      var especial=true;
+      function menConsola(e){
+        especial=false;
+
+      }
+      function teclaPulsada(e) {
+        if (e.key==" ") {
+          miDiv.innerHTML = "Espacio";
+        }
+        else{
+          miDiv.innerHTML = e.key;
+        }
+          if (especial==true) {
+            console.log("Especial")
+          }
+          especial=true;
+      }
+
+    })
+    </script>
+  </body>
+</html>

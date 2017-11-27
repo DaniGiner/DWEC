@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo</title>
+    <style media="screen">
+      body{
+        text-align: center;
+        vertical-align: middle;
+      }
+      select{
+        height: 225px;
+        width: 225px;
+        font-size: 32px;
+        border-radius: 200px 200px 200px 200px;
+        -moz-border-radius: 200px 200px 200px 200px;
+        -webkit-border-radius: 200px 200px 200px 200px;
+        text-align-last:center;
+        box-shadow:
+        inset 0 10px 15px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 10px 0 15px rgba(0,0,0,.05), inset -10px 0 15px rgba(0,0,0,.05),
+        0 5px 20px rgba(0,0,0,.1);
+        background-color: black;
+        color: white;
+        outline:0px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      select:active {
+        box-shadow: inset 0 5px 30px rgba(0,0,0,.2);
+        background-size: 55%;
+      }
+      select:hover{
+        border: 0px solid white;
+      }
+      option{
+        background-color: white;
+        color:black;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="miImg" src="foto1.png" alt="imagen" width="500"><br>
+    <select id="miSel" name="select">
+      <option id="v1" value="1" selected>Anoniman</option>
+      <option value="2">Deadpool</option>
+      <option value="3">Spiderman</option>
+      <option value="4">Cap. America</option>
+    </select>
+    <script type="text/javascript">
+    addEventListener("DOMContentLoaded", function(){
+      miSel.addEventListener("change",cambiaFoto)
+      function cambiaFoto() {
+        var x = miSel.value;
+        miImg.src = "foto" + miSel.value + ".png"
+      }
+    })
+    </script>
+
+  </body>
+</html>

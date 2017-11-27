@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej5</title>
+
+  </head>
+  <body>
+    <img src="foto1.png" id="miImg" alt="imagen" width="200"><br>
+    <a href="#nonavegar">Deshabilitar cambio de imagen</a>
+    <script type="text/javascript">
+    addEventListener("DOMContentLoaded", function(){
+      var miA = document.getElementsByTagName("a")[0];
+
+      miImg.addEventListener("mouseover", cambiaImg);
+      function cambiaImg(){
+          miImg.src = "foto2.png";
+      }
+      miImg.addEventListener("mouseout", function(){
+        miImg.src = "foto1.png";
+      })
+      miA.addEventListener("click", function(){
+        miImg.removeEventListener("mouseover", cambiaImg);
+        miA.preventDefault();
+      })
+
+    })
+    </script>
+  </body>
+</html>
