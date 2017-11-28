@@ -11,17 +11,18 @@
     <script type="text/javascript">
     addEventListener("DOMContentLoaded", function(){
       onkeypress = zoomTecla;
-
-
       function zoomTecla(e) {
         if (e.key=="+") {
-          if(miImg.width<1024){
-            miImg.width = miImg.width+25;
-          }
+          if(imagen.width<1000){
+           imagen.width +=25; 
+          else if(imagen.width==1000){
+           imagen.width+=24 }
         }
         else if (e.key=="-") {
-          if(miImg.width>150){
-            miImg.width = miImg.width-25;
+          if(imagen.width==1024){
+            imagen.width -=24; 
+          }else if(imagen.width>150){
+            imagen.width -=25; 
           }
         }
       }
