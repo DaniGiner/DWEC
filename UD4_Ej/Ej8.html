@@ -13,16 +13,16 @@
       onkeypress = zoomTecla;
       function zoomTecla(e) {
         if (e.key=="+") {
-          if(imagen.width<1000){
-           imagen.width +=25; 
-          else if(imagen.width==1000){
-           imagen.width+=24 }
+          if(miImg.width<1000){
+           miImg.width +=25; 
+          else if(miImg.width==1000){
+           miImg.width+=24 }
         }
         else if (e.key=="-") {
-          if(imagen.width==1024){
-            imagen.width -=24; 
-          }else if(imagen.width>150){
-            imagen.width -=25; 
+          if(miImg.width==1024){
+            miImg.width -=24; 
+          }else if(miImg.width>150){
+            miImg.width -=25; 
           }
         }
       }
