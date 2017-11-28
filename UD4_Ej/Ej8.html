@@ -14,13 +14,15 @@
       function zoomTecla(e) {
         if (e.key=="+") {
           if(miImg.width<1000){
-           miImg.width +=25; 
+           miImg.width +=25;
+          }
           else if(miImg.width==1000){
            miImg.width+=24 }
         }
         else if (e.key=="-") {
           if(miImg.width==1024){
             miImg.width -=24; 
+          }
           }else if(miImg.width>150){
             miImg.width -=25; 
           }
