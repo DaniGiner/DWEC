@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <h1 id="miH">Bienvenido: </h1>
+    <h1 id="miH">Bienvenido/a: </h1>
     <p id="miP"></p>
     <script type="text/javascript">
     function getCookie(cname) {
@@ -28,7 +28,7 @@
     var apellidos = getCookie("surname");
     miH.innerHTML += nombre;
     window.document.title = "Hola, "+nombre;
-    miP.innerHTML = "Es un placer verle de vuelta señor "+apellidos+". Si su número de DNI es: " + window.sessionStorage.miDni+", le enviaremos un coreo a: "+window.localStorage.miEmail;
+    miP.innerHTML = "Es un placer verle de vuelta señor/a "+apellidos+". Si su número de DNI es: " + window.sessionStorage.miDni+", le enviaremos un coreo a: "+window.localStorage.miEmail;
     </script>
   </body>
 </html>
