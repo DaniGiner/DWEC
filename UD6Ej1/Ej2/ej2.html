@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Informativos WEB</title>
+    <script type="text/javascript">
+      onload = function(){
+        if (window.XMLHttpRequest) {
+          var xhr = new XMLHttpRequest();
+        }else if(ActiveXObject("Microsoft.XMLHTTP")){
+          var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var url = Math.floor((Math.random() * 4) + 1)+"not.txt";
+        xhr.open("GET",url, true);
+        xhr.onreadystatechange = muestraResultado;
+        xhr.send();
+        function muestraResultado(){
+          estado.innerHTML = xhr.readyState;
+          cabecera.innerHTML = xhr.status;
+          respuesta.innerHTML = xhr.getAllResponseHeaders();
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            resultado.innerHTML = xhr.responseText;
+          }else if (xhr.readyState == 4 && xhr.status != 200) {
+            alert(xhr.statusText);
+          }{
+
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Informativos WEB:</h1>
+    <p id="resultado"></p>
+    <div id="estado">
+    </div>
+    <div id="cabecera">
+    </div>
+    <div id="respuesta">
+    </div>
+  </body>
+</html>
