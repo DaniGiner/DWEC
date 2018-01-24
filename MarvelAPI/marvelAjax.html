@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Marvel API</title>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<style media="screen">
+	body{
+		vertical-align: middle;
+		background-color: black;
+	}
+	.logo, .sel{
+		text-align: center;
+	}
+	select{
+		height: 225px;
+		width: 225px;
+		font-size: 32px;
+		border-radius: 200px 200px 200px 200px;
+		-moz-border-radius: 200px 200px 200px 200px;
+		-webkit-border-radius: 200px 200px 200px 200px;
+		text-align-last:center;
+		box-shadow:
+		inset 0 10px 15px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 10px 0 15px rgba(0,0,0,.05), inset -10px 0 15px rgba(0,0,0,.05),
+		0 5px 20px rgba(0,0,0,.1);
+		background-color: black;
+		color: white;
+		outline:0px;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+	}
+	select:active {
+		box-shadow: inset 0 5px 30px rgba(0,0,0,.2);
+		background-size: 55%;
+	}
+	select:hover{
+		border: 0px solid white;
+	}
+	option{
+		background-color: white;
+		color:black;
+	}
+	p{
+		color: red;
+	}
+	a{
+		color: lightyellow;
+	}
+	#imgSH{
+		width: 200px
+	}
+	#person{
+		border: 2px solid red;
+		padding: 5px;
+		margin: 5px 15%;
+	}
+	span{
+		color: white;
+	}
+</style>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$(person).hide();
+		$("button").click(function(){
+			$(person).show();
+			var valor = $("#selector").val();
+			var url = "https://gateway.marvel.com/v1/public/characters?ts=9&apikey=490e49ca3428b29da7963da933867f95&hash=847abf9b530dd127f8714ee6e86f7f1a&name=";
+			url += valor
+			$.getJSON(url,function(obj,st,xhr){
+				if (st=="success") {
+					$(nombreSH).text(obj.data.results[0].name);
+					$(desSH).text(obj.data.results[0].description);
+					$(imgSH).attr("src",obj.data.results[0].thumbnail.path+".jpg");
+					$(oficialMarvel).attr("href",obj.data.results[0].urls[0].url)
+				}else {
+					alert("No se ha podido establecer conexion con el servidor")
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="logo">
+		<img src="MHeroes.png" alt="">
+	</div>
+	<div class="sel">
+		<select id="selector">
+			<option value="spider-man">Spiderman</option>
+			<option value="iron%20man">Ironman</option>
+			<option value="deadpool">Deadpool</option>
+			<option value="hulk">Hulk</option>
+			<option value="thor">Thor</option>
+			<option value="wolverine">Lobezno</option>
+			<option value="punisher">The Punisher</option>
+		</select>
+		<br>
+		<button>Mostrar</button>
+	</div>
+	<div id="person">
+		<p>Nombre: <span id="nombreSH"></span></p>
+		<p>Descripción: <span id="desSH"></span></p>
+		<img id="imgSH" src="" alt=""><br>
+		<a id="oficialMarvel" href="#" target="_blank">-> Visita su página de Marvel</a>
+	</div>
+
+</body>
+</html>
