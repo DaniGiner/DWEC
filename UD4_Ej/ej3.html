@@ -7,11 +7,12 @@
   <body>
     <script type="text/javascript">
       addEventListener("DOMContentLoaded", function(){
-        addEventListener("click", function(e){
-          console.log("Posicion X: "+e.clientX+", Posicion Y: "+e.clientY);
-        })
-      })
-
+        document.addEventListener("mousemove",function(e){
+        if(e.shiftKey){
+          console.log("Posición X: " + e.clientX + " Posicion Y: " + e.clientY);
+        }
+      },true);
+    })
     </script>
   </body>
 </html>

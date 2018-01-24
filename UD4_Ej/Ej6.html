@@ -12,9 +12,15 @@
 
     addEventListener("DOMContentLoaded", function(){
       onkeyup = shiftPulsado;
+      var letraMin = true;
       function shiftPulsado(e) {
-        if (e.key=="Shift") {
+
+        if (e.key=="Shift" && letraMin == true) {
           miDiv.style.textTransform="uppercase";
+          letraMin = false;
+        }else{
+          miDiv.style.textTransform="lowercase";
+          letraMin = true;
         }
       }
 

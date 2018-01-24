@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Flickr API</title>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<style media="screen">
+	img{
+		width: 200px;
+		height: 150px;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function(){
+			//$(imagenes).html(" ");
+			$("img").each(function(){
+				$("img").remove("img");
+			});
+			var carga = document.createElement("IMG");
+			imagenes.appendChild(carga);
+			carga.setAttribute("src", "carga.gif");
+			var valor = $("#selector").val();
+			var url = "https://api.flickr.com/services/feeds/photos_public.gne?tags=";
+			url += valor + "&format=json&jsoncallback=?";
+			$.getJSON(url,function(data,st,xhr){
+				if (st=="success") {
+					$.each(data.items,function(i,foto){
+						if (i<10) {
+							var miImg = document.createElement("IMG");
+					    imagenes.appendChild(miImg);
+							miImg.setAttribute("src", foto.media.m);
+						}
+					});
+					$("img:first-child").hide();
+				}else {
+					alert("No se ha podido establecer conexion con el servidor")
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>Mi Flickr</h1>
+	<div id="imagenes">
+
+	</div>
+	<button>Dibujar</button>
+	<select id="selector">
+		<option value="landscapes">Paisajes</option>
+		<option value="puppys">Cachorros</option>
+		<option value="cats">Gatos</option>
+		<option value="superheroes">Superheroes</option>
+		<option value="marvel">Marvel</option>
+		<option value="spiderman">Spiderman</option>
+		<option value="deadpool">Deadpool</option>
+	</select>
+</body>
+</html>

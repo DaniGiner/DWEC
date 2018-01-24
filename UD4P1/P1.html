@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Practica Regalos</title>
+    <style media="screen">
+      *	{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body{
+        text-align: center;
+      }
+      /* Tooltip container */
+      .tooltip {
+          position: relative;
+          display: inline-block;
+          width: 30%;
+          height: 500px;
+          margin-top: 15px;
+      }
+      div img{
+        height: 500px;
+      }
+      /* Tooltip text */
+      .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 240px;
+          background-color: #555;
+          color: #fff;
+          text-align: center;
+          padding: 5px 0;
+          border-radius: 6px;
+
+          /* Position the tooltip text */
+          position: absolute;
+          z-index: 1;
+          left: 50%;
+          margin-left: -120px;
+          top: -25px;
+
+          /* Fade in tooltip */
+          opacity: 0;
+          transition: opacity 1s;
+      }
+
+      /* Tooltip arrow */
+      .tooltip .tooltiptext::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: #555 transparent transparent transparent;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Escoge un regalo</h1>
+
+    <div id="container">
+      <div class="tooltip">
+        <img  id="img1" src="carta.jpg" alt="Marvel NOW! Comic Deadpool #001">
+        <span id="pista1" class="tooltiptext">Huele a chimichanga</span>
+      </div>
+
+      <div class="tooltip">
+        <img id="img2" src="carta.jpg" alt="Caja de regalo azul vacia">
+        <span id="pista2" class="tooltiptext">Lo importante no siempre es el interior</span>
+      </div>
+
+      <div class="tooltip">
+        <img id="img3" src="carta.jpg" alt="Billete de 100">
+        <span id="pista3" class="tooltiptext">Empieza tus partidas con ventaja</span>
+      </div>
+
+    </div>
+    <script type="text/javascript">
+      addEventListener("DOMContentLoaded", function(){
+
+        // Boton Secundario desactivar
+        oncontextmenu = function(e){
+          e.preventDefault();
+        }
+
+        // Mostar pistas secundario
+        img1.addEventListener("contextmenu", function(){
+          pista1.style.visibility = "visible";
+          pista1.style.opacity = 1;
+        })
+        img2.addEventListener("contextmenu", function(){
+          pista2.style.visibility = "visible";
+          pista2.style.opacity = 1;
+        })
+        img3.addEventListener("contextmenu", function(){
+          pista3.style.visibility = "visible";
+          pista3.style.opacity = 1;
+        })
+
+        //Mostrar premios Click
+        var premiado = false;
+        var regalo = "No seleccionado";
+          img1.addEventListener("click", function(){
+            if (premiado==false) {
+              img1.src="regalo1.jpg";
+              premiado = true;
+              regalo = img1.alt;
+            }else{
+              alert("Tu regalo es: "+regalo)
+            }
+
+          })
+          img2.addEventListener("click", function(){
+            if (premiado==false) {
+              img2.src="regalo2.jpg";
+              premiado = true;
+              regalo = img2.alt;
+            }else{
+              alert("Tu regalo es: "+regalo)
+            }
+          })
+          img3.addEventListener("click", function(){
+            if (premiado==false) {
+              img3.src="regalo3.jpg";
+              premiado = true;
+              regalo = img3.alt;
+            }else{
+              alert("Tu regalo es: "+regalo)
+            }
+          })
+
+      })
+    </script>
+  </body>
+</html>
